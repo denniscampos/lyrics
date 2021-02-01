@@ -12,7 +12,11 @@ fetch(url)
     .then(data => {
         console.log(data)
 
+        if(data.lyrics) {
         document.querySelector('#printLyrics').innerText = data.lyrics
+        } else {
+            document.querySelector("#printLyrics").innerText = "Lyrics Not Available 😭"
+        }
     })
 
     .catch(err => {
